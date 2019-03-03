@@ -92,4 +92,6 @@ int request_update_hosts_paged(struct _host_info_single hosts[], int len,
     ret |=
         request_send_raw(REQUEST_UPDATE_HOSTS_PAGED, &info, sizeof(HOST_INFO));
     return ret;
+int request_update_weather(WEATHER_INFO *weather_info) {
+	    return request_send_raw(REQUEST_UPDATE_WEATHER, weather_info, sizeof(WEATHER_INFO));
 }

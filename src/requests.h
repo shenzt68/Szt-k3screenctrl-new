@@ -37,4 +37,5 @@ int request_update_ports(PORT_INFO *port_info);
  */
 int request_update_hosts_paged(struct _host_info_single hosts[], int len,
                                int start);
+int request_update_weather(WEATHER_INFO *weather_info);
 #endif
