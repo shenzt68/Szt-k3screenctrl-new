@@ -80,13 +80,13 @@ typedef enum _page {
     PAGE_BASIC_INFO = 1,
     PAGE_PORTS,
     PAGE_WAN,
+    PAGE_WEATHER,
     PAGE_WIFI,
-    PAGE_HOSTS,
-    PAGE_WEATHER
+    PAGE_HOSTS
 } PAGE;
 
 #define PAGE_MIN PAGE_BASIC_INFO
-#define PAGE_MAX PAGE_WEATHER
+#define PAGE_MAX PAGE_HOSTS
 
 /* REQUEST_UPDATE_PORTS */
 typedef struct _port_info {
