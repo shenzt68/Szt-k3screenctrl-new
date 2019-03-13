@@ -28,6 +28,5 @@ else
     echo $HW_VERSION
 fi
 
-echo $FW_VERSION
 echo $MAC_ADDR
-
+echo $FW_VERSION
