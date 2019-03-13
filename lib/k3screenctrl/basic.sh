@@ -21,12 +21,11 @@ fi
 FW_VERSION=${DISTRIB_REVISION:0:17}
 
 echo $PRODUCT_NAME
-
 if [ $(uci get k3screenctrl.@general[0].cputemp) -eq 1 ]; then
     echo $HW_VERSION $CPU_TEMP
 else
     echo $HW_VERSION
 fi
-
-echo $MAC_ADDR
 echo $FW_VERSION
+echo $MAC_ADDR
+
