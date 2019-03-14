@@ -4,21 +4,6 @@
 . /lib/functions.sh
 
 
-function encodeurl(){
-	url=`echo $1 | tr -d '\n' | od -x |awk '{
-		w=split($0,linedata," ");
-		for (j=2;j<w+1;j++)
-		{
-			for (i=7;i>0;i=i-2)
-			{
-				if (substr(linedata[j],i,2) != "00") {printf "%" ;printf toupper(substr(linedata[j],i,2));}
-			}
-		}
-	}'`
-	url_tmp=`echo $url | sed 's/.\{2\}/&%/g' | sed 's/.$//'`
-	echo %$url_tmp
-}
-
 update_weather=0
 
 update_time=$(uci get k3screenctrl.@general[0].update_time 2>/dev/null)
@@ -99,9 +84,8 @@ TYPE=`echo $weather_json | jq ".data.forecast[0].type" | sed 's/"//g'`
 !
 
 if [ "$update_weather" = "1" ]; then
-	city_name=$(encodeurl $city)
 	rm -rf /tmp/k3-weather.json
-	wget "http://api.seniverse.com/v3/weather/now.json?key=smtq3n0ixdggurox&location=$city_name&language=zh-Hans&unit=c" -O /tmp/k3-weather.json 2>/dev/null
+	wget "http://api.seniverse.com/v3/weather/now.json?key=smtq3n0ixdggurox&location=$city&language=zh-Hans&unit=c" -O /tmp/k3-weather.json 2>/dev/null
 fi
 
 weather_json=$(cat /tmp/k3-weather.json 2>/dev/null)
