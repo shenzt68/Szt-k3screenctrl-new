@@ -26,6 +26,8 @@ if [ $(uci get k3screenctrl.@general[0].cputemp) -eq 1 ]; then
 else
     echo $HW_VERSION
 fi
+
+echo $FW_VERSION
 echo $FW_VERSION
 echo $MAC_ADDR
 
