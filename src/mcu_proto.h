@@ -77,7 +77,7 @@ typedef enum _key_code {
 
 /* REQUEST_SWITCH_PAGE */
 typedef enum _page {
-    PAGE_UPGRADE_INFO = 1,
+    PAGE_UPGRADE_INFO = 0,
     PAGE_BASIC_INFO ,
     PAGE_PORTS,
     PAGE_WAN,
@@ -149,13 +149,13 @@ typedef struct _basic_info {
 } BASIC_INFO;
 /* REQUEST_UPDATE_WEATHER */
 typedef struct _weather_info {
-	    char city[32]; // city
-	        char temp[4]; // temp
-		    char date[11]; // date
-		        char time[6]; // time
-			    unsigned char weather; // weather_code
-			        unsigned char week; //0 1 2 3 4 5 6
-				    unsigned char error; //0
+	char city[32]; // city
+	char temp[4]; // temp
+	char date[11]; // date
+	char time[6]; // time
+	unsigned char weather; // weather_code
+	unsigned char week; //0 1 2 3 4 5 6
+	unsigned char error; //0
 } WEATHER_INFO;
 
 #endif
