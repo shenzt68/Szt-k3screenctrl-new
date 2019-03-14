@@ -77,7 +77,7 @@ typedef enum _key_code {
 
 /* REQUEST_SWITCH_PAGE */
 typedef enum _page {
-    PAGE_UPGRADE_INFO = 0,
+    PAGE_UPGRADE_INFO = 1,
     PAGE_BASIC_INFO ,
     PAGE_PORTS,
     PAGE_WAN,
