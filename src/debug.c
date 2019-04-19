@@ -45,9 +45,10 @@ void print_basic_info(BASIC_INFO *info) {
            "  Product Name = %s\n"
            "  HW Version = %s\n"
            "  FW Version = %s\n"
+	   "  SW Version = %s\n"
            "  MAC Address = %s\n",
            info, info->product_name, info->hw_version, info->fw_version,
-           info->mac_addr_base);
+           info->sw_version, info->mac_addr_base);
 }
 
 void print_host_info(struct _host_info_single *info, int len) {
