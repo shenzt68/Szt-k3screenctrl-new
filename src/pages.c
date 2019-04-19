@@ -21,8 +21,8 @@ static void send_page_data(PAGE page) {
     case PAGE_UPGRADE_INFO:
     case PAGE_BASIC_INFO:
         request_update_basic_info(
-            g_basic_info.product_name, g_basic_info.hw_version,
-            g_basic_info.fw_version, g_basic_info.mac_addr_base);
+            g_basic_info.product_name, g_basic_info.hw_version, g_basic_info.fw_version,
+            g_basic_info.sw_version,g_basic_info.mac_addr_base);
         break;
     case PAGE_PORTS:
         request_update_ports(&g_port_info);
