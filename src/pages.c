@@ -21,15 +21,15 @@ static void send_page_data(PAGE page) {
     case PAGE_UPGRADE_INFO:
     case PAGE_BASIC_INFO:
         request_update_basic_info(
-            g_basic_info.product_name, g_basic_info.hw_version,
-            g_basic_info.fw_version, g_basic_info.mac_addr_base);
+            g_basic_info.product_name, g_basic_info.hw_version, g_basic_info.fw_version,
+            g_basic_info.sw_version,g_basic_info.mac_addr_base);
         break;
     case PAGE_PORTS:
         request_update_ports(&g_port_info);
         break;
     case PAGE_WAN:
-        request_update_wan(g_wan_info.is_connected, g_wan_info.tx_bytes_per_sec,
-                           g_wan_info.rx_bytes_per_sec);
+        request_update_wan(g_wan_info.is_connected, g_wan_info.ip,g_wan_info.tx_bytes_per_sec,
+                           g_wan_info.rx_bytes_per_sec, g_wan_info.flag, g_wan_info.mode);
         break;
     case PAGE_WIFI:
         request_update_wifi(&g_wifi_info);

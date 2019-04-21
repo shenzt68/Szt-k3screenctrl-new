@@ -16,6 +16,7 @@ typedef struct _config {
      * K3
      * A1
      * r3921
+     * r3921
      * 02:00:00:00:00:00
      */
     char *basic_info_script;
@@ -46,10 +47,14 @@ typedef struct _config {
      *
      * Expected output format (one line for each field):
      * Internet connected? (0 or 1)
+     * flag? (ure_disable/0 or 1)
+     * mode? (sw_mode/0 1 2 3 4)
      * Upload speed (integer, in Bytes per sec)
      * Download speed (integer, in Bytes per sec)
      *
      * Example:
+     * 1
+     * 1
      * 1
      * 10240000
      * 2048000
