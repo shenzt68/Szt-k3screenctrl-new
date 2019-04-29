@@ -145,6 +145,7 @@ typedef struct _basic_info {
     char product_name[8];
     char hw_version[8];
     char fw_version[24];
+    char sw_version[24];
     char mac_addr_base[18];
 } BASIC_INFO;
 /* REQUEST_UPDATE_WEATHER */

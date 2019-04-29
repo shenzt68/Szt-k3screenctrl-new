@@ -127,7 +127,8 @@ static int update_basic_info() {
         TOKEN_STRING_OVERWRITE_STORE(g_basic_info.product_name),
         TOKEN_STRING_OVERWRITE_STORE(g_basic_info.hw_version),
         TOKEN_STRING_OVERWRITE_STORE(g_basic_info.fw_version),
-        TOKEN_STRING_OVERWRITE_STORE(g_basic_info.mac_addr_base),
+	TOKEN_STRING_OVERWRITE_STORE(g_basic_info.sw_version),
+	TOKEN_STRING_OVERWRITE_STORE(g_basic_info.mac_addr_base),
     };
     return update_storage_from_script(CFG->basic_info_script, stores,
                                       sizeof(stores) / sizeof(stores[0]));

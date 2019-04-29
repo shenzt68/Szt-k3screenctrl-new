@@ -58,6 +58,7 @@ int request_update_basic_info(const char *prod_name, const char *hw_ver,
     ARRAY_SIZED_STRCPY(basic_info.product_name, prod_name);
     ARRAY_SIZED_STRCPY(basic_info.hw_version, hw_ver);
     ARRAY_SIZED_STRCPY(basic_info.fw_version, fw_ver);
+    ARRAY_SIZED_STRCPY(basic_info.sw_version, sw_ver);
     ARRAY_SIZED_STRCPY(basic_info.mac_addr_base, mac_addr);
 
     return request_send_raw(REQUEST_UPDATE_BASIC_INFO, &basic_info,
