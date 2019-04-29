@@ -16,6 +16,7 @@ typedef struct _config {
      * K3
      * A1
      * r3921
+     * r3921
      * 02:00:00:00:00:00
      */
     char *basic_info_script;
@@ -46,13 +47,18 @@ typedef struct _config {
      *
      * Expected output format (one line for each field):
      * Internet connected? (0 or 1)
+     * flag? (ure_disable/0 or 1)
+     * mode? (sw_mode/0 1 2 3 4)
      * Upload speed (integer, in Bytes per sec)
      * Download speed (integer, in Bytes per sec)
      *
      * Example:
      * 1
+     * 192.168.1.1
      * 10240000
      * 2048000
+     * 1
+     * 1
      */
     char *wan_script;
 #define DEFAULT_WAN_SCRIPT "/lib/k3screenctrl/wan.sh"
@@ -120,25 +126,25 @@ typedef struct _config {
 
     /**
      *      * This script will be called in order to get weather info.
-     *           *
-     *                * Expected output format (one line for each field):
-     *                     * city
-     *                          * temp
-     *                               * date
-     *                                    * time
-     *                                         * weather
-     *                                              * week
-     *                                                   * error
-     *                                                        *
-     *                                                             * Example:
-     *                                                                  * 成都
-     *                                                                       * 11
-     *                                                                            * 2019-02-20
-     *                                                                                 * 14:29
-     *                                                                                      * 25
-     *                                                                                           * 0
-     *                                                                                                * 0
-     *                                                                                                     */
+     *      *
+     *      * Expected output format (one line for each field):
+     *      * city
+     *      * temp
+     *      * date
+     *      * time
+     *      * weather
+     *      * week
+     *      * error
+     *      *
+     *      * Example:
+     *      * 成都
+     *      * 11
+     *      * 2019-02-20
+     *      * 14:29
+     *      * 25
+     *      * 0
+     *      * 0
+     *      */
         char *weather_script;
 #define DEFAULT_WEATHER_SCRIPT "/lib/k3screenctrl/weather.sh"
 
