@@ -54,7 +54,7 @@ int request_update_wan(int is_connected, const char *ip, int tx_Bps, int rx_Bps,
 }
 
 int request_update_basic_info(const char *prod_name, const char *hw_ver,
-                              const char *fw_ver, const char *mac_addr) {
+                              const char *fw_ver,const char *sw_ver,  const char *mac_addr) {
     BASIC_INFO basic_info;
     bzero(&basic_info, sizeof(basic_info));
 
