@@ -1,7 +1,7 @@
 #ifndef _FRAME_TX_H
 #define _FRAME_TX_H
 
-include "mcu_proto.h"
+#include "mcu_proto.h"
 
 /*
  * Send payload to serial port.
