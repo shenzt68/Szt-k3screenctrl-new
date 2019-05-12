@@ -10,7 +10,7 @@
 
 #define ARRAY_SIZED_STRCPY(dst, src) strncpy((dst), (src), sizeof((dst)));
 static int request_send_raw(REQUEST_TYPE type, const void *data, int len) {
-    unsigned char *cmdbuf = (unsigned char *)malloc(len + 2);
+    unsigned char *cmdbuf = (unsigned char *)malloc(len + 1);
     if (cmdbuf < 0) {
         syslog(LOG_WARNING,
                "Could not allocate buffer for new request, drop it: %s\n",
@@ -18,12 +18,9 @@ static int request_send_raw(REQUEST_TYPE type, const void *data, int len) {
         return FAILURE;
     }
 
-    bzero(cmdbuf, len + 2);
-    cmdbuf[0] = PAYLOAD_HEADER;
-    cmdbuf[1] = type;
-    memmove(cmdbuf + 2, data, len);
-
-    int ret = frame_send(cmdbuf, len + 2);
+    cmdbuf[0] = type;
+    memmove(cmdbuf + 1, data, len);
+    int ret = frame_send(FRAME_APP, cmdbuf, len + 1);
     free(cmdbuf);
     return ret;
 }
