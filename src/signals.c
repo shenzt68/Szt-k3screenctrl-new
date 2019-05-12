@@ -11,6 +11,7 @@
 #include "mcu_proto.h"
 #include "pages.h"
 #include "requests.h"
+#include "firmware_upgrade.h"
 
 static int g_signal_fd;
 
@@ -59,6 +60,12 @@ void signal_notify() {
         return;
     }
 
+    /* Signal handling is completely different in firmware upgrades.
+    */
+    if (CFG->firmware_path[0] != '\0') {
+       fwupgrade_notify_signal(siginfo.ssi_signo);
+       return;
+    }
     switch (siginfo.ssi_signo) {
     case SIGALRM:
         page_update();
