@@ -8,6 +8,7 @@
 #include "debug.h"
 #include "mcu_proto.h"
 #include "scripts.h"
+#include "firmware_upgrade.h"
 
 enum _token_type {
     TOKEN_STRING_NEW,       /* Duplicate a new string and write its pointer to
